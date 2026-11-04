@@ -35,7 +35,7 @@
 
 تتوفر نسخة تجريبية من الـ API على:
 
-- **عنوان الـ API:** [https://svuis.duckdns.org](https://svuis.duckdns.org)
+- **العنوان الأساسي للـ API:** `https://svuis.duckdns.org/api/v1`
 - **Swagger:** [استعراض وتجربة الـ API](https://svuis.duckdns.org/api-docs/)
 - **فحص حالة الخدمة:** [Health](https://svuis.duckdns.org/api/v1/health)
 
@@ -109,7 +109,7 @@ The project receives HTTP requests and communicates with the university informat
 
 A demo instance of the API is available at:
 
-- **API URL:** [https://svuis.duckdns.org](https://svuis.duckdns.org)
+- **API base URL:** `https://svuis.duckdns.org/api/v1`
 - **Swagger:** [Browse and try the API](https://svuis.duckdns.org/api-docs/)
 - **Service status:** [Health](https://svuis.duckdns.org/api/v1/health)
 

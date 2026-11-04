@@ -35,9 +35,9 @@
 
 تتوفر نسخة تجريبية من الـ API على:
 
-- **عنوان الـ API:** [https://90bc-144-76-192-180.ngrok-free.app](https://90bc-144-76-192-180.ngrok-free.app)
-- **Swagger:** [استعراض وتجربة الـ API](https://90bc-144-76-192-180.ngrok-free.app/api-docs/)
-- **فحص حالة الخدمة:** [Health](https://90bc-144-76-192-180.ngrok-free.app/api/v1/health)
+- **عنوان الـ API:** [https://svuis.duckdns.org](https://svuis.duckdns.org)
+- **Swagger:** [استعراض وتجربة الـ API](https://svuis.duckdns.org/api-docs/)
+- **فحص حالة الخدمة:** [Health](https://svuis.duckdns.org/api/v1/health)
 
 بعد تشغيل المشروع، يمكن استعراض نقاط الـ API وتجربتها من خلال واجهة Swagger على الرابط:
 
@@ -109,9 +109,9 @@ The project receives HTTP requests and communicates with the university informat
 
 A demo instance of the API is available at:
 
-- **API URL:** [https://90bc-144-76-192-180.ngrok-free.app](https://90bc-144-76-192-180.ngrok-free.app)
-- **Swagger:** [Browse and try the API](https://90bc-144-76-192-180.ngrok-free.app/api-docs/)
-- **Service status:** [Health](https://90bc-144-76-192-180.ngrok-free.app/api/v1/health)
+- **API URL:** [https://svuis.duckdns.org](https://svuis.duckdns.org)
+- **Swagger:** [Browse and try the API](https://svuis.duckdns.org/api-docs/)
+- **Service status:** [Health](https://svuis.duckdns.org/api/v1/health)
 
 After starting the project, browse and try the API endpoints using Swagger at:
 

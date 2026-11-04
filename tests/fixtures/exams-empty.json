@@ -1,0 +1,6 @@
+{
+  "finalresult": [],
+  "msgs": "\r\n\t\t\t\t<tr height='20'>\r\n\t\t\t\t\t\t    <td style='font-weight: bold;background-color: #8dc0ec;'>#</td>\r\n\t\t\t\t\t\t\t<td style='font-weight: bold;background-color: #8dc0ec;'>Course</td>\r\n\t\t\t\t\t\t\t<td style='font-weight: bold;background-color: #8dc0ec;'>Class</td>\r\n\t\t\t\t\t\t\t<td style='font-weight: bold;background-color: #8dc0ec;'>Date</td>\r\n\t\t\t\t\t\t\t<td style='font-weight: bold;background-color: #8dc0ec;'>Start Time</td>\r\n\t\t\t\t\t\t\t<td style='font-weight: bold;background-color: #8dc0ec;'>End Time</td>\r\n\t\t\t\t\t\t\t<td style='font-weight: bold;background-color: #8dc0ec;'>Duration</td>\r\n\t\t\t\t\t\t\t<td style='font-weight: bold;background-color: #8dc0ec;'>Telecenter</td>\r\n\t\t\t\t</tr> \r\n\t\t\t\t\t<tr>\r\n\t\t\t\t\t\t<td colspan='8'>\r\n\t\t\t\t\t\t<div id='tel' style='padding:5px 0px 0px 1px;'  >\r\n\t\t\t\t\t\t<a> https://svuonline.org/en/node/503  </a>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</td>\r\n\t\t\t\t\t</tr>",
+  "res": 1,
+  "errorsNum": 0
+}

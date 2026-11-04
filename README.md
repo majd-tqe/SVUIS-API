@@ -58,13 +58,7 @@ npm run dev
 
 في الإنتاج يجب استخدام HTTPS أمام الخدمة، لأن ملف الجلسة يُضبط بخاصية `Secure` عندما تكون `NODE_ENV=production` ولن يعمل تسجيل الدخول عبر HTTP العادي. عند استخدام وكيل عكسي محلي، يجب أن يمرّر `Host` و`X-Forwarded-Proto` و`X-Forwarded-For` بشكل صحيح؛ لا تعرّض منفذ الخدمة 4000 مباشرة للإنترنت. تغيير كلمة المرور معطّل مؤقتًا إلى أن يمكن التحقق من نجاح العملية لدى النظام الأصلي.
 
-يمكن إصدار شهادة HTTPS موثوقة لعنوان IP عام دون نطاق عبر Let's Encrypt. تتطلب شهادة IP ملف `shortlived` وتجديدًا آليًا، وعمرها نحو 6 أيام. يتطلب مثال `webroot` إصدار Certbot 5.4 أو أحدث، وأن يصل التحقق من الإنترنت إلى منفذ 80. بعد إعداد Nginx لخدمة مسار التحقق من مجلد الويب:
-
-```bash
-sudo certbot certonly --staging --preferred-profile shortlived --webroot --webroot-path /var/www/svu-app --ip-address YOUR_PUBLIC_IP
-```
-
-استبدل العنوان والمجلد بالقيم الفعلية. شهادة `--staging` للاختبار فقط وغير موثوقة في المتصفح؛ بعد نجاح الاختبار أعد الأمر دون `--staging`. اضبط Nginx يدويًا لاستخدام `fullchain.pem` و`privkey.pem` من مسار الشهادة الذي يعرضه Certbot، وفعّل إعادة تحميل Nginx بعد التجديد، ثم اختبر التجديد باستخدام `sudo certbot renew --dry-run`. الإعداد القديم `deploy/nginx.conf` في المجلد الأب يعمل عبر HTTP فقط وليس إعداد إنتاج آمنًا. راجع [دليل Let's Encrypt لشهادات IP](https://letsencrypt.org/2026/03/11/shorter-certs-certbot/) قبل النشر.
+تستخدم النسخة التجريبية نطاق DuckDNS وشهادة HTTPS من Let's Encrypt. عند استضافة نسختك، اربط نطاقك بخادمك واضبط الوكيل العكسي وشهادة صالحة، مع تجديد الشهادة تلقائيًا وإعادة تحميل الوكيل بعد تجديدها. اتبع [تعليمات Certbot](https://certbot.eff.org/instructions) المناسبة لخادمك، واختبر التجديد باستخدام `sudo certbot renew --dry-run`.
 
 لتشغيل الاختبارات أو بناء المشروع وتشغيل النسخة المبنية:
 
@@ -132,13 +126,7 @@ The service runs at `http://localhost:4000` by default. See `.env.example` for a
 
 In production, HTTPS must terminate at a reverse proxy: with `NODE_ENV=production` the session cookie is marked `Secure` and login will not work over plain HTTP. The local proxy must correctly forward `Host`, `X-Forwarded-Proto`, and `X-Forwarded-For`; do not expose port 4000 directly. Password changes are temporarily disabled until the upstream success response can be reliably verified.
 
-Let's Encrypt can issue trusted HTTPS certificates for a public IP without a domain. IP certificates require the `shortlived` profile, last about six days, and must be renewed automatically. The `webroot` example requires Certbot 5.4 or later and public access to port 80. Once Nginx serves the challenge path from your web root:
-
-```bash
-sudo certbot certonly --staging --preferred-profile shortlived --webroot --webroot-path /var/www/svu-app --ip-address YOUR_PUBLIC_IP
-```
-
-Replace the IP and directory with your values. A `--staging` certificate is for testing and is not browser-trusted; after testing, repeat without `--staging`. Configure Nginx manually with the `fullchain.pem` and `privkey.pem` paths reported by Certbot, set a deploy hook to reload Nginx after renewal, and test renewal with `sudo certbot renew --dry-run`. The old parent-directory `deploy/nginx.conf` is HTTP-only and is not a secure production configuration. See [Let's Encrypt's IP certificate guide](https://letsencrypt.org/2026/03/11/shorter-certs-certbot/).
+The demo uses a DuckDNS domain and a Let's Encrypt HTTPS certificate. When hosting your own instance, point your domain to your server and configure a reverse proxy with a valid certificate, automatic renewal, and a deploy hook to reload the proxy after renewal. Follow the [Certbot instructions](https://certbot.eff.org/instructions) for your server and test renewal with `sudo certbot renew --dry-run`.
 
 To run tests or build and start the production version:
 
